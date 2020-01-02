@@ -16,9 +16,11 @@ function App() {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
         </header>
-        <Posts />
-        <hr />
-        <PostForm />
+        <div className="body-section">
+          <PostForm /><br />
+          <hr />
+          <Posts />
+        </div>
       </div>
     </Provider>
   );
