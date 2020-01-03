@@ -46,6 +46,7 @@ class PostForm extends Component {
                         <textarea name="body" onChange={this.onChange} value={this.state.body} />
                     </div><br />
                     <button type="submit">Submit</button>
+                    <br />
                 </form>
             </div>
         )
