@@ -10,14 +10,11 @@ export const fetchPosts = () => (dispatch) => { // Function inside function
             type: FETCH_POSTS,
             payload: posts
         }))
-}
+};
 
 
-export const createPost = (postData) => (dispatch) => { // Function inside function
-
-    console.log('new post');
-
-    fetch(`https://jsonplaceholder.typicode.com/posts`, {
+export const createPost = postData => dispatch => {
+    fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
@@ -25,8 +22,10 @@ export const createPost = (postData) => (dispatch) => { // Function inside funct
         body: JSON.stringify(postData)
     })
         .then(res => res.json())
-        .then(post => dispatch({
-            type: NEW_POST,
-            payload: post
-        }))
-}
+        .then(post =>
+            dispatch({
+                type: NEW_POST,
+                payload: post
+            })
+        );
+};

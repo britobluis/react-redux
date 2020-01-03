@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { createPost } from '../actions/postActions'
 
 class PostForm extends Component {
@@ -17,15 +17,16 @@ class PostForm extends Component {
     }   
 
     onChange(e) {
-        this.setState({[e.target.name]: e.target.value});
+        this.setState({ [e.target.name]: e.target.value });
     }
 
     onSubmit(e) {
         e.preventDefault();
+
         const post = {
             title: this.state.title,
             body: this.state.body
-        }
+        };
 
         this.props.createPost(post);
 
